@@ -6,4 +6,4 @@ opencv-python==4.11.0.86
 pigpio==1.78
 psutil==7.2.2
 RPi.GPIO==0.7.1; platform_system == "Linux"
-tflite-runtime==2.14.0; platform_system == "Linux" and python_version == "3.11"
+tflite-runtime==2.14.0; platform_system == "Linux"
