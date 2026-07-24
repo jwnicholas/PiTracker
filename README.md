@@ -11,8 +11,8 @@
     <img src="https://img.shields.io/badge/License-MIT-green.svg"
          alt="License">
   </a>
-  <a href="https://github.com/jwnicholas99/rpi-rgb-led/releases/">
-    <img src="https://img.shields.io/github/v/release/jwnicholas99/rpi-rgb-led"
+  <a href="https://github.com/jwnicholas/PiTracker/releases/">
+    <img src="https://img.shields.io/github/v/release/jwnicholas/PiTracker"
          alt="License">
   </a>
   <img src="https://img.shields.io/badge/contributions-welcome-orange.svg?style=flat"
@@ -110,8 +110,8 @@ Go -> Interfacing Options -> P1 Camera -> Yes
 
 #### 2. Clone this Github repository
 ```
-$ git clone https://github.com/jwnicholas99/rpi_rover.git
-$ cd rpi_rover/
+$ git clone https://github.com/jwnicholas/PiTracker.git
+$ cd PiTracker/
 ```
 
 #### 3. Create a new venv and install packages
