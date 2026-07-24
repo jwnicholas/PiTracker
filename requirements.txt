@@ -1,9 +1,7 @@
-# Runtime dependencies for 64-bit Raspberry Pi OS Bookworm and Python 3.11.
+# Cross-platform runtime dependencies.
 #
 # NumPy stays on 1.26 because tflite-runtime 2.14 predates NumPy 2.
 numpy==1.26.4
 opencv-python==4.11.0.86
 pigpio==1.78
 psutil==7.2.2
-RPi.GPIO==0.7.1; platform_system == "Linux"
-tflite-runtime==2.14.0; platform_system == "Linux"

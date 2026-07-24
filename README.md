@@ -143,7 +143,7 @@ longer needed.
 
 ```
 $ python -m pip install --upgrade pip
-$ python -m pip install -r requirements.txt
+$ python -m pip install -r requirements-rpi.txt
 ```
 
 #### 4. Update main.py to use your own GPIO pins
