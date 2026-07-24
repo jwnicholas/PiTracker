@@ -101,12 +101,11 @@ To build the pan-tilt camera, you just need two servos - one for panning and the
 
 ### Setting up RPi
 
-#### 1. Enable camera on the Raspberry Pi
-In the terminal of your rpi, issue:
-```
-$ sudo raspi-config
-```
-Go -> Interfacing Options -> P1 Camera -> Yes 
+#### 1. Prepare Raspberry Pi OS
+
+The supported software baseline is **64-bit Raspberry Pi OS Bookworm with
+Python 3.11**. Configure and test the camera using the Raspberry Pi OS camera
+tools before starting PiTracker.
 
 #### 2. Clone this Github repository
 ```
@@ -116,34 +115,35 @@ $ cd PiTracker/
 
 #### 3. Create a new venv and install packages
 
-First, create and activate a new virtual environment by issuing:
+Install the required system packages:
+
 ```
-$ python3 -m venv rpi-rover
-$ source rpi-rover/bin/activate
+$ sudo apt update
+$ sudo apt install -y python3-venv pigpio libgl1 libglib2.0-0
+$ sudo systemctl enable --now pigpiod
 ```
 
-Second, install required packages for OpenCV
+Confirm that Python 3.11 is active:
+
 ```
-$ sudo apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
-$ sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-$ sudo apt-get -y install libxvidcore-dev libx264-dev
-$ sudo apt-get -y install qt4-dev-tools libatlas-base-dev
-$ pip3 install opencv-python==3.4.6.27
+$ python3 --version
+Python 3.11.x
 ```
 
-Third, install Tensorflow Lite. If your Python is version 3.5:
+Create and activate a virtual environment:
+
 ```
-$ pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp35-cp35m-linux_armv7l.whl
+$ python3 -m venv .venv
+$ source .venv/bin/activate
 ```
 
-If version 3.7:
-```
-$ pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
-```
+Install the pinned runtime dependencies. The manifest includes current ARM
+wheels for OpenCV and TensorFlow Lite, so the old hand-installed wheels are no
+longer needed.
 
-Fourth, install other python packages:
 ```
-$ pip3 install -r requirements.txt
+$ python -m pip install --upgrade pip
+$ python -m pip install -r requirements.txt
 ```
 
 #### 4. Update main.py to use your own GPIO pins

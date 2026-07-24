@@ -1,6 +1,5 @@
 from multiprocessing import Manager
 from multiprocessing import Process
-from imutils.video import VideoStream
 from utils.pid import PID
 from utils.obj_detector import ObjDetector
 import signal
